@@ -91,15 +91,32 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  let passwordLength = 0
+  options={passwordLength:0};
+  atLeastOneInputCharacterSelected = false;
+
   //continues to prompt user to enter password length if it is not between 8 and 128;
   do{
-    passwordLength = parseInt(prompt("Select a password length between 8 and 128"));
-  }while(passwordLength < 8 || passwordLength > 128);
-  let includeNum = confirm("Include numeric characters");
-  let includeLower = confirm("Include lower characters");
-  let includeUpper = confirm("Include upper case characters");
-  return {passwordLength, includeNum, includeLower, includeUpper}
+    options.passwordLength = parseInt(prompt("Select a password length between 8 and 128"));
+  }while(options.passwordLength < 8 || options.passwordLength > 128);
+
+  do{
+  options.includeLower = confirm("Include lower case characters");
+  options.includeUpper = confirm("Include upper case characters");
+  options.includeNum = confirm("Include numeric characters");
+  options.includeSpecial = confirm("Include special characters ($@%&*, etc)")
+    for (const key in options) {
+      if(options[key] == true){
+        atLeastOneInputCharacterSelected = true;
+      }
+    }
+    //Remind user that they must select at least one character type
+    if(!atLeastOneInputCharacterSelected){
+      alert("You must select at least one character type");
+    }  
+
+  }while(!atLeastOneInputCharacterSelected);
+
+  return options;
 }
 
 // Function for getting a random element from an array
@@ -114,19 +131,24 @@ function generatePassword() {
 
   // Loop to determine how many times the get random function should be fired
   for (let i = 0; i < options.passwordLength; i) {
-    //TODO: Make this into a loop
+    //TODO: Make this into a function
+    if(options.includeLower && i < options.passwordLength){
+      password = password.concat(getRandom(lowerCasedCharacters))
+      i++;
+      }
+    if(options.includeUpper && i < options.passwordLength){
+      password = password.concat(getRandom(upperCasedCharacters))
+      i++;
+      }
     if(options.includeNum && i < options.passwordLength){
         password = password.concat(getRandom(numericCharacters))
         i++;
       }
-      if(options.includeLower && i < options.passwordLength){
-        password = password.concat(getRandom(lowerCasedCharacters))
+    if(options.includeSpecial && i < options.passwordLength){
+        password = password.concat(getRandom(specialCharacters))
         i++;
-      }
-      if(options.includeUpper && i < options.passwordLength){
-        password = password.concat(getRandom(upperCasedCharacters))
-        i++;
-      }
+      }  
+
     }
   return password;
 }
