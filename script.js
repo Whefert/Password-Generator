@@ -96,12 +96,10 @@ function getPasswordOptions() {
 
   //continues to prompt user to enter password length if it is not between 8 and 128;
   do {
-    const passwordLength = prompt("Select a password length between 8 and 128");
-
-    if (!isNaN(passwordLength)) {
-      options.passwordLength = parseInt(passwordLength);
-    }
-  } while (options.passwordLength < 8 || options.passwordLength > 128);
+    options.passwordLength = prompt(
+      "Select a password length between 8 and 128"
+    );
+  } while (!(options.passwordLength >= 8 && options.passwordLength <= 128));
 
   do {
     options.includeLower = confirm("Include lower case characters");
