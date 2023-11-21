@@ -6,7 +6,10 @@ This web application allows users to generate a random password based on criteri
 
 Here is the link to the deployed application: https://whefert.github.io/password-generator/
 
-See screenshot from the web application below:
+See screenshot from the web application below: 
+
+![Password Generator App Screenshot](https://github.com/Whefert/password-generator/blob/main/Password%20Generator%20Screenshot.png)
+
 
 ## Acceptance Criteria
 
