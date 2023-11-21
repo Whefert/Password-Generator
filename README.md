@@ -1,79 +1,39 @@
-# Module 5 Challenge: Password Generator
+# Password Generator
 
-## Overview
+## Description
 
-This week’s challenge requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+This web application allows users to generate a random password based on criteria they’ve selected. The app features dynamically updated HTML and CSS powered by JavaScript code. The password can include special characters.
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
+Here is the link to the deployed application: https://whefert.github.io/password-generator/
 
-## Instructions
+See screenshot from the web application below:
 
-The following image shows the web application's appearance and functionality:
+## Acceptance Criteria
 
-![password generator demo](./assets/05-javascript-challenge-demo.png)
+- Unique password is generated when the button is clicked
+  - Present a series of prompts for password criteria
+    - Length of password
+      - At least 8 characters but no more than 128.
+    - Character types
+      - Lowercase
+      - Uppercase
+      - Numeric
+      - Special characters ($@%&\*, etc)
+  - Code validates for each input and at least one character type must be selected
+  - Once prompts are answered then the password is generated and written to the page
 
+## Installation
 
-* Generate a password when the button is clicked
-  * Present a series of prompts for password criteria
-    * Length of password
-      * At least 8 characters but no more than 128.
-    * Character types
-      * Lowercase
-      * Uppercase
-      * Numeric
-      * Special characters ($@%&*, etc)
-  * Code should validate for each input and at least one character type should be selected
-  * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
+N/A
 
-## Grading Requirements
+## Usage
 
-This challenge is graded based on the following criteria: 
+- To use the password generator, simply visit the url for the deployed application and respond to the prompts.
 
-### Technical Acceptance Criteria: 40%
+## Credits
 
-* Satisfies all of the above acceptance criteria plus the following:
+N/A
 
-  * The challenge should not produce any errors in the console when you inspect it using Chrome DevTools.
+## License
 
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+Please refer to the LICENSE in the repo.
